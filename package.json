@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/CatalystCode/cloud-cd/issues"
   },
-  "homepage": "https://github.com/CatalystCode/cloud-cd#readme"
+  "homepage": "https://github.com/CatalystCode/cloud-cd#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "pkgcloud": "CatalystCode/pkgcloud"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.48",
+    "@types/node": "^7.0.0"
+  }
 }
