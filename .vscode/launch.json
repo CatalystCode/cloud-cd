@@ -13,6 +13,16 @@
       "outFiles": ["/src"],
       "sourceMaps": true,
       "stopOnEntry": true
+    }
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch PS Test",
+      "program": "${workspaceRoot}\\src\\run-winrm.js",
+      "cwd": "${workspaceRoot}",
+      "outFiles": ["/src"],
+      "sourceMaps": true,
+      "stopOnEntry": true
     },
     {
       "type": "node",
