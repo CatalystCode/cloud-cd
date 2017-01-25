@@ -1,0 +1,27 @@
+{
+  "name": "cloud-cd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatalystCode/cloud-cd.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CatalystCode/cloud-cd/issues"
+  },
+  "homepage": "https://github.com/CatalystCode/cloud-cd#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "pkgcloud": "CatalystCode/pkgcloud"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.48",
+    "@types/node": "^7.0.0"
+  }
+}
