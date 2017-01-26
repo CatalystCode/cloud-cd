@@ -8,12 +8,12 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Test",
-      "program": "${workspaceRoot}\\test\\test-create.private.js",
+      "program": "${workspaceRoot}\\test\\test-get.js",
       "cwd": "${workspaceRoot}",
       "outFiles": ["/src"],
       "sourceMaps": true,
       "stopOnEntry": true
-    }
+    },
     {
       "type": "node",
       "request": "launch",

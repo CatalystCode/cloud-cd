@@ -2,7 +2,7 @@
   "name": "cloud-cd",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/main.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/CatalystCode/cloud-cd#readme",
   "dependencies": {
+    "bluebird": "^3.4.7",
     "lodash": "^4.17.4",
-    "pkgcloud": "CatalystCode/pkgcloud"
+    "pkgcloud": "CatalystCode/pkgcloud",
+    "ssh2": "^0.5.4"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.48",
