@@ -5,7 +5,7 @@ import { ExecuteRemotePowerShell } from './powershell';
 import { GetVMAction } from '../get-vm';
 
 export interface IRemoteExecuteConfig {
-  address: string, 
+  hostname: string, 
   username: string, 
   password: string,
   platform: string
@@ -43,12 +43,12 @@ export class RemoteExecute {
 
           case 'Windows':
             this.win_client = new ExecuteRemotePowerShell();
-            this.win_client.run_powershell(config.address, config.username, config.password, scriptConfig.script, callback);
+            this.win_client.run_powershell(server.hostname, config.username, config.password, scriptConfig.script, callback);
             break;
 
           case 'Linux':
             ssh.execute({
-              guest_ip: config.address,
+              guest_ip: server.hostname,
               guest_user: config.username,
               guest_password: config.password,
               script: scriptConfig.script

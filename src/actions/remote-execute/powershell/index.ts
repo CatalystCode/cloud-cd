@@ -15,20 +15,37 @@ export class ExecuteRemotePowerShell {
    *  });
    */
   run_powershell(host: string, username: string, password: string, script: string, callback: (Error, Object?) => void) 
-  {    
-    var command = util.format('%s', "assets//InvokeRemotePS -host ", host, " -username ", username, " -password ", password, " -scriptpath ", script);
-    this.ps_child = spawn("powershell.exe", [command]);
+  {
+    var escapedPassword = password.replace(/(\$)/g, '`$');
+    var commands = 
+      `$hostName="${host}";` +
+      `$winrmPort="5986";` +
+      `$soptions = New-PSSessionOption -SkipRevocationCheck -SkipCACheck -SkipCNCheck;` +
+      `$secpasswd = ConvertTo-SecureString "${escapedPassword}" -AsPlainText -Force;` +
+      `$creds = New-Object System.Management.Automation.PSCredential ("${username}", $secpasswd);` +
+      `Invoke-Command -ComputerName $hostName -Port $winrmPort -Credential $creds -SessionOption $soptions -UseSSL -FilePath "${script}";` +
+      ''
+    ;
+    this.ps_child = spawn("powershell.exe", [commands]);
 
-    var output;   
+    var outputs = "";
+    var errors = "";
     this.ps_child.stdout.on("data",function(output){
-        console.log("Powershell Data: " + output);
+      console.log("Powershell Data: " + output);
+      outputs += '\n' + output;
     });
     this.ps_child.stderr.on("data",function(data){
         console.log("Powershell Errors: " + data);
-        callback(new Error(data));
+        errors += '\n' + ((new Error(data)).message);
     });
     this.ps_child.on("exit",function(){ 
-        console.log("Powershell Script finished");        
+      console.log("Powershell Script finished");        
+
+      if (errors) {
+        return callback(new Error(errors), outputs);
+      }
+
+      return callback(null, outputs);
     });
     this.ps_child.stdin.end(); //end input          
   }
