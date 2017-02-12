@@ -66,6 +66,11 @@ export class RemoteExecute {
   }
 
   validateOptions(config: IRemoteExecuteConfig, scriptConfig: IRemoteExecuteScriptConfig) {
+
+    if (!scriptConfig.script || !scriptConfig.scripts || !scriptConfig.scripts.length) {
+      throw new Error('No scripts were supplied in the configuration to execute');
+    }
+
     return true;
   }
 }

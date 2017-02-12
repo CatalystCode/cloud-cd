@@ -1,6 +1,6 @@
 {
   "name": "cloud-cd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This module abstracts continuous delivery to multiple clouds",
   "main": "lib/index.js",
   "typings": "src/index",
@@ -16,6 +16,12 @@
     "url": "git+https://github.com/CatalystCode/cloud-cd.git"
   },
   "author": "mor shemesh <mor.shemesh@gmail.com>",
+  "contributors": [
+    {
+      "name": "Nava Vaisman Levy",
+      "email": "navale@microsoft.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CatalystCode/cloud-cd/issues"
