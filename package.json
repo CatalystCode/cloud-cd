@@ -1,8 +1,13 @@
 {
   "name": "cloud-cd",
   "version": "1.0.0",
-  "description": "",
+  "description": "This module abstracts continuous delivery to multiple clouds",
   "main": "lib/index.js",
+  "typings": "src/index",
+  "files": [
+    "src/",
+    "lib/"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/CatalystCode/cloud-cd.git"
   },
-  "author": "",
+  "author": "mor shemesh <mor.shemesh@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CatalystCode/cloud-cd/issues"
@@ -25,5 +30,33 @@
   "devDependencies": {
     "@types/lodash": "^4.14.48",
     "@types/node": "^7.0.0"
-  }
+  },
+  "keywords": [
+    "continuous delivery",
+    "marketplace",
+    "remote execution",
+    "cloud",
+    "cloud computing",
+    "api",
+    "rackspace",
+    "joyent",
+    "aws",
+    "amazon",
+    "azure",
+    "google",
+    "iaas",
+    "servers",
+    "compute",
+    "storage",
+    "databases",
+    "client",
+    "mongolab",
+    "iriscouch",
+    "mongohq",
+    "openstack",
+    "redistogo",
+    "hpcloud",
+    "hp",
+    "helion"
+  ]
 }
