@@ -1,4 +1,4 @@
-var pkgcloud = require('pkgcloud');
+var pkgcloud = require('pkgcloud-with-arm');
 
 export interface GetVMActionOptions {
   /** vm name */

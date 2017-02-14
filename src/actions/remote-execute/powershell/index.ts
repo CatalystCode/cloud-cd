@@ -26,7 +26,7 @@ export class ExecuteRemotePowerShell {
       `Invoke-Command -ComputerName $hostName -Port $winrmPort -Credential $creds -SessionOption $soptions -UseSSL -FilePath "${script}";` +
       ''
     ;
-    this.ps_child = spawn("powershell.exe", [commands]);
+    this.ps_child = spawn("powershell", [commands]);
 
     var outputs = "";
     var errors = "";

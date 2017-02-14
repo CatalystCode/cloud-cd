@@ -7,8 +7,18 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch VM Test",
+      "name": "Launch VM Create",
       "program": "${workspaceRoot}\\test\\test-create.js",
+      "cwd": "${workspaceRoot}",
+      "outFiles": ["/src"],
+      "sourceMaps": true,
+      "stopOnEntry": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch VM Destroy",
+      "program": "${workspaceRoot}\\test\\test-destroy.js",
       "cwd": "${workspaceRoot}",
       "outFiles": ["/src"],
       "sourceMaps": true,

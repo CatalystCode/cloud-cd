@@ -7,7 +7,9 @@ destroyVMClient.perform(config.azure.server, {
   destroyNics: true,
   destroyPublicIP: true,
   destroyVnet: true, 
-  destroyStorage: true 
+  destroyStorage: false,
+  destroyFileOSDisk: true,
+  destroyFileDataDisk: true
 }, (err, server) => {
   if (err) {
     return console.error(err);

@@ -1,6 +1,6 @@
 {
   "name": "cloud-cd",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This module abstracts continuous delivery to multiple clouds",
   "main": "lib/index.js",
   "typings": "src/index",
@@ -28,14 +28,19 @@
   },
   "homepage": "https://github.com/CatalystCode/cloud-cd#readme",
   "dependencies": {
+    "async": "^2.1.4",
     "bluebird": "^3.4.7",
     "lodash": "^4.17.4",
-    "pkgcloud": "CatalystCode/pkgcloud",
+    "pkgcloud-with-arm": "^1.4.2",
     "ssh2": "^0.5.4"
   },
   "devDependencies": {
+    "@types/async": "^2.0.38",
     "@types/lodash": "^4.14.48",
     "@types/node": "^7.0.0"
+  },
+  "paths" : {
+    "pkgcloud" : "pkgcloud-with-arm"
   },
   "keywords": [
     "continuous delivery",
