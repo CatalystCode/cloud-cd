@@ -54,10 +54,7 @@ function execute(config, callback) {
             username: vm_user,
             password: vm_password
         })
-        .then(() => {
-            //ssh_upload(ssh_client, PATH.join(__dirname, 'deploy_base.sh'), '/tmp/deploy_base.sh')
-            ssh_upload(ssh_client, config.script, '/tmp/' + scriptFileName);
-        })
+        .then(() => ssh_upload(ssh_client, config.script, '/tmp/' + scriptFileName))
         .then(() => ssh_exec(ssh_client,
             'sudo bash /tmp/' + scriptFileName, {
                 pty: true

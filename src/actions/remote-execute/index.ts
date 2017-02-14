@@ -32,6 +32,10 @@ export class RemoteExecute {
 
       this.getVMClient.perform(config as any, (error, server) => {
 
+        if (error) {
+          return callback(error);
+        }
+
         var osType = 
               server && 
               server.original && 
@@ -67,7 +71,7 @@ export class RemoteExecute {
 
   validateOptions(config: IRemoteExecuteConfig, scriptConfig: IRemoteExecuteScriptConfig) {
 
-    if (!scriptConfig.script || !scriptConfig.scripts || !scriptConfig.scripts.length) {
+    if (!scriptConfig.script) {
       throw new Error('No scripts were supplied in the configuration to execute');
     }
 
