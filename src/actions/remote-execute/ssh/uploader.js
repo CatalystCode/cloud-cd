@@ -47,6 +47,8 @@ function execute(config, callback) {
     var vm_user = config.guest_user;
     var vm_password = config.guest_password;
 
+    var scriptFileName = PATH.basename(config.script);
+
     ssh_connect(ssh_client, {
             host: vm_ip,
             username: vm_user,
@@ -54,17 +56,10 @@ function execute(config, callback) {
         })
         .then(() => {
             //ssh_upload(ssh_client, PATH.join(__dirname, 'deploy_base.sh'), '/tmp/deploy_base.sh')
-            ssh_upload(ssh_client, config.script, '/tmp/deploy_base.out')
+            ssh_upload(ssh_client, config.script, '/tmp/' + scriptFileName);
         })
         .then(() => ssh_exec(ssh_client,
-            'curl -u tamireran:0436dd1acfaf9cd247b3dd22a37f561f -L http://146.148.16.59:8080/job/mdserver/lastSuccessfulBuild//artifact/*zip*/archive.zip >/tmp/noobaa-NVA-latest.zip;' +
-            'sudo yum install unzip;' +
-            'fname=$(sudo unzip -o /tmp/noobaa-NVA-latest.zip -d  /tmp/|grep "tar.gz"|awk \'{ print $2 }\');' +
-            'cp $fname /tmp/noobaa-NVA.tar.gz', {
-                pty: true
-            }))
-        .then(() => ssh_exec(ssh_client,
-            'sudo bash -x /tmp/deploy_base.sh runinstall', {
+            'sudo bash /tmp/' + scriptFileName, {
                 pty: true
             }))
         .then(() => ssh_client.end())
