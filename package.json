@@ -1,6 +1,6 @@
 {
   "name": "cloud-cd",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "This module abstracts continuous delivery to multiple clouds",
   "main": "lib/index.js",
   "typings": "src/index",
@@ -31,7 +31,7 @@
     "async": "^2.1.4",
     "bluebird": "^3.4.7",
     "lodash": "^4.17.4",
-    "pkgcloud-with-arm": "^1.4.3",
+    "pkgcloud-with-arm": "^1.4.5",
     "ssh2": "^0.5.4"
   },
   "devDependencies": {
