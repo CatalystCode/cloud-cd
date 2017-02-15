@@ -13,6 +13,7 @@ export interface IRemoteExecuteConfig {
 
 export interface IRemoteExecuteScriptConfig {
   script?: string, 
+  args?: string,
   scripts?: string[]
 }
 
@@ -55,7 +56,8 @@ export class RemoteExecute {
               guest_ip: server.hostname,
               guest_user: config.username,
               guest_password: config.password,
-              script: scriptConfig.script
+              script: scriptConfig.script,
+              args: scriptConfig.args
             }, callback);
             break;
 

@@ -56,7 +56,7 @@ function execute(config, callback) {
         })
         .then(() => ssh_upload(ssh_client, config.script, '/tmp/' + scriptFileName))
         .then(() => ssh_exec(ssh_client,
-            'sudo bash /tmp/' + scriptFileName, {
+            'sudo bash /tmp/' + scriptFileName + ' ' + (config.args || ''), {
                 pty: true
             }))
         .then(() => ssh_client.end())
