@@ -27,7 +27,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch PS Test",
+      "name": "Launch VM Get",
       "program": "${workspaceRoot}\\test\\test-get.js",
       "cwd": "${workspaceRoot}",
       "outFiles": ["/src"],

@@ -3,7 +3,7 @@ var config = require('./config');
 
 var destroyVMClient = new actions.DestroyVMAction(config.azure.connection);
 
-destroyVMClient.perform(config.azure.server, {
+destroyVMClient.perform(config.azure.server2, {
   destroyNics: true,
   destroyPublicIP: true,
   destroyVnet: true, 

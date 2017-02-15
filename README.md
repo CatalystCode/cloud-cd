@@ -39,7 +39,7 @@ var config = {
       password:  'Cloudcdusr!!',
 
       storageOSDiskName: "osdisk",
-      storageDataDisk1VhdName: "datadisk1",
+      storageDataDiskNames: [ "datadisk1" ],
 
       osType: 'Linux',
       imagePublisher: "Canonical",
