@@ -38,8 +38,8 @@ switch (action) {
     break;
 
   case 'get':
-    var createVMClient = new actions.CreateVMAction(providerConfig.connection);
-    createVMClient.perform(providerConfig.server, function (err, server) {
+    var createVMGet = new actions.GetVMAction(providerConfig.connection);
+    getVMClient.perform(providerConfig.server, function (err, server) {
       if (err) {
         return console.error(err);
       }
