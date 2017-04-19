@@ -1,0 +1,27 @@
+{
+  "azure-v2": {
+    "connection": {
+      "provider": "azure-v2",
+      "subscriptionId": "241c00b3-23ec-46dd-9fdf-189e22357b82",
+      "resourceGroup": "resource-group",
+      "servicePrincipal": {
+        "clientId": "d0ce1b24-c9ba-4b16-8f04-f3e9874afce1",
+        "secret": "sdjhASdidjnwDAJD232JsdHnasj1223Njdsnas1233JHSd=",
+        "domain": "b169ea6c-d1c5-498d-84df-c0bbe48f1c66"
+      }
+    },
+    "server": {
+      "name": "vm-server-name",
+      "flavor": "Standard_D1",
+      "username": "pkgcloud",
+      "password": "Pkgcloud!!",
+      "storageOSDiskName": "osdisk",
+      "storageDataDiskNames": ["datadisk1"],
+      "osType": "Linux",
+      "imagePublisher": "Canonical",
+      "imageOffer": "UbuntuServer",
+      "imageSku": "16.04.0-LTS",
+      "imageVersion": "latest"
+    }
+  }
+}
