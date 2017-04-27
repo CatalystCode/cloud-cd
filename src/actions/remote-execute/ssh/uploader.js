@@ -30,10 +30,10 @@ function ssh_upload(client, path, dest) {
         .then(sftp => new P((resolve, reject) => {
             var readStream = fs.createReadStream(path);
             var writeStream = sftp.createWriteStream(dest);
-            writeStream.on('close', function() {
+            writeStream.on('close', function () {
                 console.log("- file transferred succesfully");
                 resolve();
-            }).on('end', function() {
+            }).on('end', function () {
                 console.log("sftp connection closed");
             }).on('error', reject);
             // initiate transfer of file
@@ -41,7 +41,7 @@ function ssh_upload(client, path, dest) {
         }));
 }
 
-function execute(config, callback) {
+function execute(config, os_type) {
     var ssh_client = new ssh2.Client();
     var vm_ip = config.guest_ip;
     var vm_user = config.guest_user;
@@ -49,24 +49,31 @@ function execute(config, callback) {
 
     var scriptFileName = PATH.basename(config.script);
 
+    var remote_path = 'C:\\Users\\SSHD\\AppData\\Local\\Temp\\' + scriptFileName;
+    var script_runner = 'echo "\\n" | powershell -File ' + remote_path + ' ' + (config.args || '');
+    var options = {};
+    if (os_type === 'Linux') {
+        remote_path = '/tmp/' + scriptFileName;
+        script_runner = 'sudo bash ' + remote_path + ' ' + (config.args || '');
+        options = {
+            pty: true
+        };
+    }
+
+
     ssh_connect(ssh_client, {
             host: vm_ip,
             username: vm_user,
             password: vm_password
         })
-        .then(() => ssh_upload(ssh_client, config.script, '/tmp/' + scriptFileName))
-        .then(() => ssh_exec(ssh_client,
-            'sudo bash /tmp/' + scriptFileName + ' ' + (config.args || ''), {
-                pty: true
-            }))
+        .then(() => ssh_upload(ssh_client, config.script, remote_path))
+        .then(() => ssh_exec(ssh_client, script_runner, options))
         .then(() => ssh_client.end())
         .then(() => {
             console.log('All done.');
-            callback();
         })
-        .catch(function(err) {
+        .catch(function (err) {
             console.log('Error !', err.stack);
-            callback(err);
         });
 }
 

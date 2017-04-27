@@ -3,10 +3,10 @@ var config = require('./config');
 
 var destroyVMClient = new actions.DestroyVMAction(config.azure.connection);
 
-destroyVMClient.perform(config.azure.server2, {
+destroyVMClient.perform(config.azure.server_linux, {
   destroyNics: true,
   destroyPublicIP: true,
-  destroyVnet: true, 
+  destroyVnet: true,
   destroyStorage: false,
   destroyFileOSDisk: true,
   destroyFileDataDisk: true

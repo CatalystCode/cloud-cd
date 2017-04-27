@@ -16,12 +16,10 @@
     "url": "git+https://github.com/CatalystCode/cloud-cd.git"
   },
   "author": "mor shemesh <mor.shemesh@gmail.com>",
-  "contributors": [
-    {
-      "name": "Nava Vaisman Levy",
-      "email": "navale@microsoft.com"
-    }
-  ],
+  "contributors": [{
+    "name": "Nava Vaisman Levy",
+    "email": "navale@microsoft.com"
+  }],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CatalystCode/cloud-cd/issues"
@@ -31,7 +29,7 @@
     "async": "^2.1.4",
     "bluebird": "^3.4.7",
     "lodash": "^4.17.4",
-    "pkgcloud-with-arm": "^1.4.5",
+    "pkgcloud-with-arm": "^1.4.9",
     "ssh2": "^0.5.4"
   },
   "devDependencies": {
@@ -39,8 +37,8 @@
     "@types/lodash": "^4.14.48",
     "@types/node": "^7.0.0"
   },
-  "paths" : {
-    "pkgcloud" : "pkgcloud-with-arm"
+  "paths": {
+    "pkgcloud": "pkgcloud-with-arm"
   },
   "keywords": [
     "continuous delivery",
