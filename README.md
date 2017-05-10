@@ -7,7 +7,9 @@ This module abstracts the process of continuous delivery on multiple clouds.
 
 # Known Issues
 This package currently uses [CatalystCode/pkgcloud](https://github.com/CatalystCode/pkgcloud) directly to enable azure ARM.
-Once the [pull request](https://github.com/pkgcloud/pkgcloud/pull/550) is merged, the relecant dependency should also be updated.
+Once the [pull request](https://github.com/pkgcloud/pkgcloud/pull/550) is merged, the relevant dependency should also be updated.
+
+Currently supports Windows Server 2012 and up for running remote commands (using SSH).
 
 # Usage
 

@@ -1,6 +1,6 @@
 {
   "name": "cloud-cd",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "This module abstracts continuous delivery to multiple clouds",
   "main": "lib/index.js",
   "typings": "src/index",
@@ -16,10 +16,13 @@
     "url": "git+https://github.com/CatalystCode/cloud-cd.git"
   },
   "author": "mor shemesh <mor.shemesh@gmail.com>",
-  "contributors": [
-    {
+  "contributors": [{
       "name": "Nava Vaisman Levy",
       "email": "navale@microsoft.com"
+    },
+    {
+      "name": "Jacky Albo",
+      "email": "jacky.albo@noobaa.com"
     }
   ],
   "license": "MIT",
@@ -31,7 +34,7 @@
     "async": "^2.1.4",
     "bluebird": "^3.4.7",
     "lodash": "^4.17.4",
-    "pkgcloud-with-arm": "^1.4.5",
+    "pkgcloud-with-arm": "^1.4.9",
     "ssh2": "^0.5.4"
   },
   "devDependencies": {
@@ -39,8 +42,8 @@
     "@types/lodash": "^4.14.48",
     "@types/node": "^7.0.0"
   },
-  "paths" : {
-    "pkgcloud" : "pkgcloud-with-arm"
+  "paths": {
+    "pkgcloud": "pkgcloud-with-arm"
   },
   "keywords": [
     "continuous delivery",
