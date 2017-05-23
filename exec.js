@@ -1,6 +1,6 @@
 /**
- * This file is executable by jenkins and can receive parameters to 
- * 
+ * This file is executable by jenkins and can receive parameters to
+ *
  * Params:
  * 0 - action [get/create/remote/destroy]
  * 1 - provider [azure-v2/amazon/...]
@@ -34,17 +34,17 @@ switch (action) {
         return console.error(err);
       }
       console.dir(server);
-    });    
+    });
     break;
 
   case 'get':
     var createVMGet = new actions.GetVMAction(providerConfig.connection);
-    getVMClient.perform(providerConfig.server, function (err, server) {
+    createVMGet.perform(providerConfig.server, function (err, server) {
       if (err) {
         return console.error(err);
       }
       console.dir(server);
-    });    
+    });
     break;
 
   case 'remote':
@@ -53,7 +53,7 @@ switch (action) {
       if (err) {
         return console.error(err);
       }
-    });    
+    });
     break;
 
   case 'destroy':
@@ -64,7 +64,7 @@ switch (action) {
         return console.error(err);
       }
       console.dir(server);
-    });        
+    });
     break;
 
   default:
