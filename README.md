@@ -25,7 +25,7 @@ var config = {
   azure: {
     connection: {
       provider: 'azure-v2',
-      subscriptionId: "e9be1fc6-cb43-4830-99f9-0251055fecec",  
+      subscriptionId: "e9be1fc6-cb43-4830-99f9-0251055fecec",
       resourceGroup: "resources-rg",
 
       servicePrincipal: {
@@ -99,5 +99,5 @@ destroyVMClient.perform(config.azure.server, (err) => {
 });
 ```
 
-# Lisence
+# License
 MIT
